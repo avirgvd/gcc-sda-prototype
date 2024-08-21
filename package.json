@@ -1,0 +1,43 @@
+{
+  "name": "hpe-design-experiment",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --force",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@rjsf/core": "^6.0.0-alpha.0",
+    "@rjsf/utils": "^5.20.0",
+    "@rjsf/validator-ajv8": "^6.0.0-alpha.0",
+    "grommet": "^2.31.0",
+    "grommet-exp": "https://github.com/grommet/grommet-exp/tarball/stable",
+    "grommet-theme-hpe": "^5.0.2",
+    "leaflet": "^1.9.3",
+    "leaflet.markercluster": "^1.5.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-jsonschema-form": "^1.8.1",
+    "react-leaflet": "^4.2.1",
+    "react-router-dom": "^6.10.0",
+    "styled-components": "^5.3.9"
+  },
+  "devDependencies": {
+    "@rollup/plugin-image": "^3.0.2",
+    "@types/leaflet": "^1.9.3",
+    "@types/leaflet.markercluster": "^1.5.1",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vanilla-extract/css": "^1.9.5",
+    "@vanilla-extract/recipes": "^0.3.0",
+    "@vanilla-extract/vite-plugin": "^3.8.0",
+    "@vitejs/plugin-react": "^3.1.0",
+    "grommet-icons": "^4.10.0",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0",
+    "vite-plugin-svgr": "^3.2.0"
+  }
+}

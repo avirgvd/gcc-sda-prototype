@@ -1,0 +1,220 @@
+[
+  {
+    "title": "Determined AI",
+    "author": "HPE",
+    "description": "World-class capabilities to support training at enterprise-scale.",
+    "category": "AI/ML",
+    "src": "/determined-ai.svg",
+    "region": "Asia Pacific",
+    "details": {
+      "availableRegions": ["US West"],
+      "languages": ["English"],
+      "supportedWorkspaceTypes": [
+        "Standard enterprise workspace",
+        "Managed service provider workspace"
+      ],
+      "documentation": "dev.hpe.com/storage/block/docs",
+      "termsOfService": "https://terms.hpe.com",
+      "published": "2020-07-17"
+    },
+    "overview": "Built for our hybrid cloud world to help you unlock the full potential of your data.<br/><br/>\nBlock Storage enables:\n- Simplified deployment of new server hardware from bare metal to configuration.\n- Unified management and monitoring of new and existing compute devices across locations.\n- Label and Group devices for intuitive inventory management.\n- Firmware management and compliance.\n- Policy-driven governance and automation.\n- Secure connectivity from edge-to-cloud and Single Sign-on."
+  },
+  {
+    "title": "HPE Networking Services",
+    "author": "HPE",
+    "description": "World-class capabilities to support training at enterprise-scale.",
+    "src": "/networking-services.svg",
+    "region": "Europe",
+    "details": {
+      "availableRegions": ["US West"],
+      "languages": ["English"],
+      "supportedWorkspaceTypes": [
+        "Standard enterprise workspace",
+        "Managed service provider workspace"
+      ],
+      "documentation": "dev.hpe.com/storage/block/docs",
+      "termsOfService": "https://terms.hpe.com",
+      "published": "2020-07-17"
+    },
+    "overview": "Built for our hybrid cloud world to help you unlock the full potential of your data.<br/><br/>\nBlock Storage enables:\n- Simplified deployment of new server hardware from bare metal to configuration.\n- Unified management and monitoring of new and existing compute devices across locations.\n- Label and Group devices for intuitive inventory management.\n- Firmware management and compliance.\n- Policy-driven governance and automation.\n- Secure connectivity from edge-to-cloud and Single Sign-on."
+  },
+  {
+    "title": "Wellness Insights",
+    "author": "HPE",
+    "description": "World-class capabilities to support training at enterprise-scale.",
+    "src": "/wellness-insights.svg",
+    "region": "Africa",
+    "details": {
+      "availableRegions": ["US West"],
+      "languages": ["English"],
+      "supportedWorkspaceTypes": [
+        "Standard enterprise workspace",
+        "Managed service provider workspace"
+      ],
+      "documentation": "dev.hpe.com/storage/block/docs",
+      "termsOfService": "https://terms.hpe.com",
+      "published": "2020-07-17"
+    },
+    "overview": "Built for our hybrid cloud world to help you unlock the full potential of your data.<br/><br/>\nBlock Storage enables:\n- Simplified deployment of new server hardware from bare metal to configuration.\n- Unified management and monitoring of new and existing compute devices across locations.\n- Label and Group devices for intuitive inventory management.\n- Firmware management and compliance.\n- Policy-driven governance and automation.\n- Secure connectivity from edge-to-cloud and Single Sign-on."
+  },
+  {
+    "title": "Dataiku DSS",
+    "author": "Dataiku",
+    "description": "Bring data analysts, engineers, and scientists together. ",
+    "category": "AI/ML",
+    "src": "/dataiku.svg",
+    "region": "Asia Pacific",
+    "details": {
+      "availableRegions": ["US West"],
+      "languages": ["English"],
+      "supportedWorkspaceTypes": [
+        "Standard enterprise workspace",
+        "Managed service provider workspace"
+      ],
+      "documentation": "dev.hpe.com/storage/block/docs",
+      "termsOfService": "https://terms.hpe.com",
+      "published": "2020-07-17"
+    },
+    "overview": "Built for our hybrid cloud world to help you unlock the full potential of your data.<br/><br/>\nBlock Storage enables:\n- Simplified deployment of new server hardware from bare metal to configuration.\n- Unified management and monitoring of new and existing compute devices across locations.\n- Label and Group devices for intuitive inventory management.\n- Firmware management and compliance.\n- Policy-driven governance and automation.\n- Secure connectivity from edge-to-cloud and Single Sign-on."
+  },
+  {
+    "title": "Flywheel",
+    "author": "Flywheel",
+    "description": "Bring data analysts, engineers, and scientists together.",
+    "category": "AI/ML",
+    "src": "/flywheel.svg",
+    "region": "Africa",
+    "details": {
+      "availableRegions": ["US West"],
+      "languages": ["English"],
+      "supportedWorkspaceTypes": [
+        "Standard enterprise workspace",
+        "Managed service provider workspace"
+      ],
+      "documentation": "dev.hpe.com/storage/block/docs",
+      "termsOfService": "https://terms.hpe.com",
+      "published": "2020-07-17"
+    },
+    "overview": "Built for our hybrid cloud world to help you unlock the full potential of your data.<br/><br/>\nBlock Storage enables:\n- Simplified deployment of new server hardware from bare metal to configuration.\n- Unified management and monitoring of new and existing compute devices across locations.\n- Label and Group devices for intuitive inventory management.\n- Firmware management and compliance.\n- Policy-driven governance and automation.\n- Secure connectivity from edge-to-cloud and Single Sign-on."
+  },
+  {
+    "title": "H20 Driverless AI",
+    "author": "H20",
+    "description": "Bring data analysts, engineers, and scientists together.",
+    "category": "AI/ML",
+    "src": "/h2o.svg",
+    "region": "Asia Pacific",
+    "details": {
+      "availableRegions": ["US West"],
+      "languages": ["English"],
+      "supportedWorkspaceTypes": [
+        "Standard enterprise workspace",
+        "Managed service provider workspace"
+      ],
+      "documentation": "dev.hpe.com/storage/block/docs",
+      "termsOfService": "https://terms.hpe.com",
+      "published": "2020-07-17"
+    },
+    "overview": "Built for our hybrid cloud world to help you unlock the full potential of your data.<br/><br/>\nBlock Storage enables:\n- Simplified deployment of new server hardware from bare metal to configuration.\n- Unified management and monitoring of new and existing compute devices across locations.\n- Label and Group devices for intuitive inventory management.\n- Firmware management and compliance.\n- Policy-driven governance and automation.\n- Secure connectivity from edge-to-cloud and Single Sign-on."
+  },
+  {
+    "title": "Apache Spark",
+    "author": "Apache",
+    "description": "Open source analytics engine for big data processing, with built-in modules for streaming, SQL, machine learning and graph processing.",
+    "category": "Analytics",
+    "src": "/apache.svg",
+    "region": "Europe",
+    "details": {
+      "availableRegions": ["US West"],
+      "languages": ["English"],
+      "supportedWorkspaceTypes": [
+        "Standard enterprise workspace",
+        "Managed service provider workspace"
+      ],
+      "documentation": "dev.hpe.com/storage/block/docs",
+      "termsOfService": "https://terms.hpe.com",
+      "published": "2020-07-17"
+    },
+    "overview": "Built for our hybrid cloud world to help you unlock the full potential of your data.<br/><br/>\nBlock Storage enables:\n- Simplified deployment of new server hardware from bare metal to configuration.\n- Unified management and monitoring of new and existing compute devices across locations.\n- Label and Group devices for intuitive inventory management.\n- Firmware management and compliance.\n- Policy-driven governance and automation.\n- Secure connectivity from edge-to-cloud and Single Sign-on."
+  },
+  {
+    "title": "Dremio",
+    "author": "Dremio",
+    "description": "Open source analytics engine for big data processing, with built-in modules for streaming, SQL, machine learning and graph processing.",
+    "category": "Analytics",
+    "src": "/dremio.svg",
+    "region": "Asia Pacific",
+    "details": {
+      "availableRegions": ["US West"],
+      "languages": ["English"],
+      "supportedWorkspaceTypes": [
+        "Standard enterprise workspace",
+        "Managed service provider workspace"
+      ],
+      "documentation": "dev.hpe.com/storage/block/docs",
+      "termsOfService": "https://terms.hpe.com",
+      "published": "2020-07-17"
+    },
+    "overview": "Built for our hybrid cloud world to help you unlock the full potential of your data.<br/><br/>\nBlock Storage enables:\n- Simplified deployment of new server hardware from bare metal to configuration.\n- Unified management and monitoring of new and existing compute devices across locations.\n- Label and Group devices for intuitive inventory management.\n- Firmware management and compliance.\n- Policy-driven governance and automation.\n- Secure connectivity from edge-to-cloud and Single Sign-on."
+  },
+  {
+    "title": "Joulica",
+    "author": "Joulica",
+    "description": "Open source analytics engine for big data processing, with built-in modules for streaming, SQL, machine learning and graph processing.",
+    "category": "Analytics",
+    "src": "/joulica.svg",
+    "region": "Asia Pacific",
+    "details": {
+      "availableRegions": ["US West"],
+      "languages": ["English"],
+      "supportedWorkspaceTypes": [
+        "Standard enterprise workspace",
+        "Managed service provider workspace"
+      ],
+      "documentation": "dev.hpe.com/storage/block/docs",
+      "termsOfService": "https://terms.hpe.com",
+      "published": "2020-07-17"
+    },
+    "overview": "Built for our hybrid cloud world to help you unlock the full potential of your data.<br/><br/>\nBlock Storage enables:\n- Simplified deployment of new server hardware from bare metal to configuration.\n- Unified management and monitoring of new and existing compute devices across locations.\n- Label and Group devices for intuitive inventory management.\n- Firmware management and compliance.\n- Policy-driven governance and automation.\n- Secure connectivity from edge-to-cloud and Single Sign-on."
+  },
+  {
+    "title": "Singlestore",
+    "author": "Singlestore",
+    "description": "Built for data-intensive applications, SingleStore enables low-latency analytics without any compromises.",
+    "category": "Big Data",
+    "src": "/singlestore.svg",
+    "region": "Africa",
+    "details": {
+      "availableRegions": ["US West"],
+      "languages": ["English"],
+      "supportedWorkspaceTypes": [
+        "Standard enterprise workspace",
+        "Managed service provider workspace"
+      ],
+      "documentation": "dev.hpe.com/storage/block/docs",
+      "termsOfService": "https://terms.hpe.com",
+      "published": "2020-07-17"
+    },
+    "overview": "Built for our hybrid cloud world to help you unlock the full potential of your data.<br/><br/>\nBlock Storage enables:\n- Simplified deployment of new server hardware from bare metal to configuration.\n- Unified management and monitoring of new and existing compute devices across locations.\n- Label and Group devices for intuitive inventory management.\n- Firmware management and compliance.\n- Policy-driven governance and automation.\n- Secure connectivity from edge-to-cloud and Single Sign-on."
+  },
+  {
+    "title": "StreamSets",
+    "author": "StreamSets Data",
+    "description": "StreamSets speeds data integration for data lakes and data warehouses for hybrid and multi-cloud environments.",
+    "category": "Big Data",
+    "src": "/streamsets.svg",
+    "region": "Asia Pacific",
+    "details": {
+      "availableRegions": ["US West"],
+      "languages": ["English"],
+      "supportedWorkspaceTypes": [
+        "Standard enterprise workspace",
+        "Managed service provider workspace"
+      ],
+      "documentation": "dev.hpe.com/storage/block/docs",
+      "termsOfService": "https://terms.hpe.com",
+      "published": "2020-07-17"
+    },
+    "overview": "Built for our hybrid cloud world to help you unlock the full potential of your data.<br/><br/>\nBlock Storage enables:\n- Simplified deployment of new server hardware from bare metal to configuration.\n- Unified management and monitoring of new and existing compute devices across locations.\n- Label and Group devices for intuitive inventory management.\n- Firmware management and compliance.\n- Policy-driven governance and automation.\n- Secure connectivity from edge-to-cloud and Single Sign-on."
+  }
+]
