@@ -22,9 +22,13 @@ import {Search, Filter} from "grommet-icons";
 import {Toolbar} from "grommet/components/Toolbar";
 import {DropButton, TextInput} from "grommet";
 
-const categories = ["AI/ML", "Analytics", "Big Data"];
+import {restget} from "../utils/restclient";
+
 
 const Integrations = () => {
+
+  const [integrations, setIntegrations] = useState({});
+
   const navigate = useNavigate();
   useEffect(() => {
     const changeRoute = () => {
@@ -34,6 +38,17 @@ const Integrations = () => {
     window.addEventListener("routeChange", changeRoute);
     changeRoute();
     return () => window.removeEventListener("routeChange", changeRoute);
+  }, []);
+
+  useEffect(() => {
+    console.log("inside useEffect for making REST call")
+
+    restget("/api/integrations")
+    .then((response: JSON) => {
+      console.log(response);
+      setIntegrations(response);
+    })
+
   }, []);
 
   return (
