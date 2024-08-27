@@ -1,7 +1,9 @@
 // src/DynamicForm.tsx
 import React, { useState } from 'react';
-import { Box, Button, CheckBox, TextArea, RadioButton } from 'grommet';
-import { Form, Select, FormField, TextInput } from 'grommet-exp';
+import { Box, Button, Select, CheckBox, TextArea, RadioButton } from 'grommet';
+import { Form, FormField, TextInput } from 'grommet-exp';
+import { useNavigate } from "react-router-dom";
+import {JSONPath} from "jsonpath-plus";
 
 import {Password} from './password';
 
@@ -14,6 +16,7 @@ interface Field {
   name: string;
   type: string;
   label: string;
+  mapto: string;
   required?: boolean;
   options?: Option[];
   placeholder?: string;
@@ -26,20 +29,29 @@ interface Section {
 
 interface DynamicFormProps {
   schema: Section[];
+  data1: object;
   onSubmit: (formData: Record<string, any>) => void;
 }
 
-const DynamicForm: React.FC<DynamicFormProps> = ({ schema, onSubmit }) => {
+const DynamicForm: React.FC<DynamicFormProps> = ({ schema, data1, onSubmit }) => {
   const [formData, setFormData] = useState<Record<string, any>>({});
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    console.log(e.target);
     const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
       [name]: type === 'checkbox' ? checked : value,
     });
   };
+
+  const vcenter_name = JSONPath({json: (data1), path: "$.vcenter.name"})
+  const datacenters = JSONPath({json: (data1), path: "$.vcenter.datacenters[*].name"})
+  console.log("Vcenter name data1: ", data1);
+  console.log("Vcenter name is: ", vcenter_name);
+  console.log("Vcenter datacenters is: ", datacenters);
+
 
   const handleValidation = (): boolean => {
     let errors: Record<string, string> = {};
@@ -68,6 +80,7 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ schema, onSubmit }) => {
   };
 
   const renderField = (field: Field) => {
+    console.log(field);
     switch (field.type) {
       case 'select':
 
@@ -76,13 +89,9 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ schema, onSubmit }) => {
             name={field.name}
             onChange={handleChange}
             required={field.required}
+            options={JSONPath({json: data1, path: field.mapto}) || ''}
+            value={formData[field.name]}
           >
-            <option value="">Select...</option>
-            {field.options?.map((option, index) => (
-              <option key={index} value={option.value}>
-                {option.label}
-              </option>
-            ))}
           </Select>
         );
       case 'radio':
@@ -118,7 +127,7 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ schema, onSubmit }) => {
             placeholder={field.placeholder}
             onChange={handleChange}
             required={field.required}
-            value={formData[field.name] || ''}
+            value={formData[field.name]}
           />
         );
         case 'text':
@@ -129,7 +138,7 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ schema, onSubmit }) => {
             placeholder={field.placeholder}
             onChange={handleChange}
             required={field.required}
-            value={formData[field.name] || ''}
+            value={formData[field.name]}
           />
         );
         case 'password':
@@ -160,6 +169,9 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ schema, onSubmit }) => {
     }
   };
 
+  const navigate = useNavigate();
+  console.log("Form Data: ", formData);
+
   return (
     <Form gap='small' onSubmit={handleSubmit}>
       {schema.map((section, sectionIndex) => (
@@ -174,9 +186,9 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ schema, onSubmit }) => {
         </div>
       ))}
       <Box direction="row" justify="between" margin={{ top: 'medium' }}>
-      <Button label="Cancel" />
+      <Button label="Cancel" onClick={() => {navigate(-1)}} />
             <Button
-              onClick={() => setValue({ name: '', email: '' })}
+              disabled
               type="reset"
               label="Reset"
             />

@@ -10,23 +10,24 @@ import { Select, Notification } from "grommet";
 import { restget, restpost } from "../utils/restclient";
 import DynamicForm from '../components/DynamicForm';
 
-const AddIntegration = () => {
+
+const AddOrchestrator = () => {
 
     const [notif, setNotif] = useState(false);
     const [value, setValue] = useState('');
-    const [provider_type, setProviderType] = useState('');
-    const [providers, setProviders] = useState({});
-    const [providerMeta, setProviderMeta] = useState({});
+    const [orchestrator_type, setOrchestratorType] = useState('');
+    const [orchestrators, setOrchestrators] = useState({});
+    const [orchestratorMeta, setOrchestratorMeta] = useState({});
 
     let options = ["OneView", "vCenter"]
 
     useEffect(() => {
         console.log("inside useEffect for making REST call")
 
-        restget("/api/providers")
+        restget("/api/orchestrators/types")
             .then((response: JSON) => {
                 console.log(response);
-                setProviders(response)
+                setOrchestrators(response)
             })
             .catch((err) => {
                 console.log("Exception: ", err);
@@ -36,66 +37,61 @@ const AddIntegration = () => {
 
 
     useEffect(() => {
-        console.log("inside useEffect for making REST call for providers ", provider_type);
+        console.log("inside useEffect for making REST call for orchestrators ", orchestrator_type);
 
-        if (provider_type) {
-            restget("/api/provider/?name=" + provider_type)
+        setOrchestratorMeta({})
+
+        if (orchestrator_type) {
+            restget("/api/orchestrator/?name=" + orchestrator_type)
                 .then((response: JSON) => {
                     console.log(response);
-                    setProviderMeta(response)
+                    setOrchestratorMeta(response)
                 })
 
         }
 
 
-    }, [provider_type]);
-
-    interface ProviderData {
-        "alias": string;
-        "username": string;
-        "password": string;
-        "hostname": string;
-    }
+    }, [orchestrator_type]);
 
     const handleSubmit = (formData: any) => {
 
 
-        formData["provider_type"] = provider_type;
+        formData["orchestrator_type"] = orchestrator_type;
 
         console.log(formData);
 
         const data = {"data": formData};
-        restpost("/api/provider", data)
+        restpost("/api/orchestrator", data)
             .then((response: JSON) => {
                 console.log(response);
                 setNotif(false)
-                window.location.href = "/integrations"
+                window.location.href = "/orchestrators"
             })
             .catch((err) => {
                 setNotif(true);
             });
     };
 
-    console.log(providers);
-    if (providers.hasOwnProperty("providers")) {
-        options = providers["providers"].map((item: string) => item);
+    console.log(orchestrators);
+    if (orchestrators.hasOwnProperty("orchestrators")) {
+        options = orchestrators["orchestrators"].map((item: string) => item);
     }
 
     let jsonschema = [];
     let uischema = {};
 
-    console.log("providers meta: ", providerMeta);
+    console.log("orchestrator meta: ", orchestratorMeta);
 
-    if (providerMeta.hasOwnProperty("jsonschema")) {
-        jsonschema = providerMeta["jsonschema"];
+    if (orchestratorMeta.hasOwnProperty("jsonschema")) {
+        jsonschema = orchestratorMeta["jsonschema"];
     }
-    if (providerMeta.hasOwnProperty("uischema")) {
-        uischema = providerMeta["uischema"];
+    if (orchestratorMeta.hasOwnProperty("uischema")) {
+        uischema = orchestratorMeta["uischema"];
     }
 
-    function onProviderSelection(event) {
+    function onOrchestratorSelection(event) {
         console.log(event)
-        setProviderType(event.value);
+        setOrchestratorType(event.value);
     }
 
     console.log("jsonschema: ", jsonschema);
@@ -108,21 +104,21 @@ const AddIntegration = () => {
                 <PageMain>
                     <Box gap={"small"} pad={'large'} align={"start"}>
                         <Box align={"start"} direction={"column"} justify='start' >
-                            <h3>Provider Type</h3>
+                            <h3>Orchestrator Type</h3>
                             <Select
                                 id="select"
                                 name="select"
-                                placeholder="Select Provider"
-                                value={provider_type}
+                                placeholder="Select Orchestrator"
+                                value={orchestrator_type}
                                 options={options}
-                                onChange={onProviderSelection}
+                                onChange={onOrchestratorSelection}
                             />
                         </Box>
                         <Box>
                         { notif && (<Notification
                         status='critical'
                     title="Error"
-                    message="Failed to connect to the specified provider"
+                    message="Failed to connect to the specified orchestrator"
                     onClose={() => { }}
                 />)}
 
@@ -143,4 +139,4 @@ const AddIntegration = () => {
     );
 };
 
-export default AddIntegration;
+export default AddOrchestrator;

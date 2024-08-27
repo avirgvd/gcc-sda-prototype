@@ -31,7 +31,7 @@ export async function restget(endpoint: string) {
 
 }
 
-export async function restpost(endpoint: string, payload: JSON) {
+export async function restpost(endpoint: string, payload: object) {
 
   console.log("Make rest POST: ", payload);
   const url = BACKEND_HOST + endpoint;
@@ -55,7 +55,7 @@ export async function restpost(endpoint: string, payload: JSON) {
       console.log(response);
       console.log(response.status);
       if (response.status !== 200) {
-        return { "error": response.status, "message": response.statusText };
+        throw { "error": response.status, "message": response.statusText };
       }
       return response.json();
     })

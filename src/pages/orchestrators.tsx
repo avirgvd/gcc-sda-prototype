@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   Box,
+ 
   DataTable,
   Grid,
   Heading,
@@ -19,16 +20,15 @@ import { nameToSlug } from "../utils";
 import { cardGrid, container, mainGrid } from "../styles.css";
 import {Search, Filter} from "grommet-icons";
 import {Toolbar} from "grommet/components/Toolbar";
-import {Button, DropButton, TextInput} from "grommet";
+import { Button, DropButton, TextInput} from "grommet";
 
 import {restget} from "../utils/restclient";
 
 
-const Integrations = () => {
+const Orchestrators = () => {
 
-  const [integrations, setIntegrations] = useState([]);
+  const [orchestrators, setOrchestrators] = useState([]);
 
-  console.log(window.location);
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -44,10 +44,10 @@ const Integrations = () => {
   useEffect(() => {
     console.log("inside useEffect for making REST call")
 
-    restget("/api/integrations")
+    restget("/api/orchestrators/list")
     .then((response: any) => {
       console.log(response);
-      setIntegrations(response['data']);
+      setOrchestrators(response['data']);
     })
 
   }, []);
@@ -55,10 +55,10 @@ const Integrations = () => {
   return (
     <Page kind="wide">
       <PageContent className={container} gap="medium">
-        <PageHeader title="Providers" />
+        <PageHeader title="Orchestrators" />
         <Grid className={mainGrid} align="start" gap="medium">
           <LeftNav />
-          <MainContent data={integrations} />
+          <MainContent data={orchestrators} />
         </Grid>
       </PageContent>
     </Page>
@@ -77,7 +77,7 @@ const MainContent = ({data}: {data: any[]}) => {
             <DropButton kind="toolbar" icon={<Filter />} dropContent={<Box flex></Box>}>
 
             </DropButton>
-            <Button primary label="Add" onClick={() => {window.location.href = "/add_integration"}} />
+            <Button primary label="Add" onClick={() => {window.location.href = "/add_orchestrator"}} />
           </Toolbar>
         </Box>
         <Box direction="row" gap="small" align="start" justify="between">
@@ -101,13 +101,13 @@ const MainContent = ({data}: {data: any[]}) => {
               property: "alias",
               header: "Alias",
             },
-            { property: "provider_type", header: "Type" },
+            { property: "orchestrator_type", header: "Type" },
             { property: "hostname", header: "Hostname" },
             {
               header: "Action",
               render: (datum) => (
                 <Link
-                  to={`/detail/?category=integrations&name=${datum.alias}`}
+                  to={`/detail/?category=orchestrator&name=${datum.alias}`}
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
                   <Button label="View details" kind="secondary" />
@@ -122,4 +122,4 @@ const MainContent = ({data}: {data: any[]}) => {
   );
 };
 
-export default Integrations;
+export default Orchestrators;

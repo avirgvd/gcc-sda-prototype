@@ -1,31 +1,29 @@
-import { Box, Button, Heading, Paragraph, Text } from "grommet-exp";
+import { Button, Heading, Paragraph, Text } from "grommet-exp";
+import { Box } from "grommet";
 import { nameToSlug } from "../utils";
 import { Link } from "react-router-dom";
 
 export const Card = ({
-  data: { title, author, description, src },
+  data: { alias, hostname, provider_type },
   level,
 }: {
   data: {
-    title: string;
-    author?: string;
-    description?: string;
-    src?: string;
+    alias: string;
+    hostname?: string;
+    provider_type?: string;
   };
   level?: 1 | 2 | 3;
 }) => (
-  <Box align="start" gap="medium">
+  <Box align="start" gap="medium" border={{"color":"border","size":"small","side":"all","style":"solid"}} round="small" pad={"small"}>
     <Box align="start" gap="small">
       <Box>
-        <Heading level={level}>{title}</Heading>
-        <Text size="xsmall" color="weak">
-          {author}
-        </Text>
+        <Heading level={level}>{alias}</Heading>
       </Box>
-      <Paragraph>{description}</Paragraph>
+      <Paragraph><b>Type:</b> {provider_type}</Paragraph>
+      <Paragraph><b>Hostname:</b> {hostname}</Paragraph>
     </Box>
     <Link
-      to={`/${nameToSlug(title)}`}
+      to={`/integrations/?name=${(alias)}`}
       style={{ textDecoration: "none", color: "inherit" }}
     >
       <Button label="View details" kind="secondary" />

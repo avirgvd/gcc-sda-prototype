@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   Box,
+  
   DataTable,
   Grid,
   Heading,
@@ -44,7 +45,7 @@ const Integrations = () => {
   useEffect(() => {
     console.log("inside useEffect for making REST call")
 
-    restget("/api/integrations")
+    restget("/api/catalogs")
     .then((response: any) => {
       console.log(response);
       setIntegrations(response['data']);
@@ -55,7 +56,7 @@ const Integrations = () => {
   return (
     <Page kind="wide">
       <PageContent className={container} gap="medium">
-        <PageHeader title="Providers" />
+        <PageHeader title="Integrations" />
         <Grid className={mainGrid} align="start" gap="medium">
           <LeftNav />
           <MainContent data={integrations} />
@@ -77,7 +78,7 @@ const MainContent = ({data}: {data: any[]}) => {
             <DropButton kind="toolbar" icon={<Filter />} dropContent={<Box flex></Box>}>
 
             </DropButton>
-            <Button primary label="Add" onClick={() => {window.location.href = "/add_integration"}} />
+            <Button primary label="Add" onClick={() => {window.location.href = "/create_catalog"}} />
           </Toolbar>
         </Box>
         <Box direction="row" gap="small" align="start" justify="between">
@@ -107,7 +108,7 @@ const MainContent = ({data}: {data: any[]}) => {
               header: "Action",
               render: (datum) => (
                 <Link
-                  to={`/detail/?category=integrations&name=${datum.alias}`}
+                  to={`/integrations/?name=${datum.alias}`}
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
                   <Button label="View details" kind="secondary" />

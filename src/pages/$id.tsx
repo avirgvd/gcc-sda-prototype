@@ -18,9 +18,12 @@ import { nameToSlug } from "../utils";
 
 const Detail = () => {
   const { id } = useParams();
+
+  console.log("INSIDE ID page")
   const [page] = Object.values(data).filter(
     (value) => nameToSlug(value.title) === id
   );
+
 
   const navigate = useNavigate();
   useEffect(() => {

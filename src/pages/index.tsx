@@ -84,7 +84,7 @@ const Index = () => {
               <Heading level={2}>Quick actions</Heading>
               <Nav gap="small">
                 {actions.map((action, index) => (
-                  <Button key={index} label={action} onClick={() => {window.alert(action)}}/>
+                  <Button key={index} label={action} onClick={() => {window.location.href = "/integrations"}}/>
                 ))}
               </Nav>
             </ContentContainer>
